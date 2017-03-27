@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load webpack_static from webpack_loader %}
+{% load js %}
+{#{% load crispy_forms_tags %}#}
+{% load staticfiles %}
+
+{% block title %}{{ block.super }}About{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="about" %}
+{% endblock %}
+
+<!-- Benefits of the Django application -->
+{% block container %}
+
+<div id="sec1" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>Jesteśmy producentem artykułów reklamowych z nadrukiem firmowym</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="sec2" class="text-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+
+        <p class="lead"></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="text-center"><img class="img centered" src={% static '/site/img/segregator_s.png' %} alt="Segregatory"></div>
+        <div class="text-s24 text-center">
+        <h2>Segregatory</h2>
+        </div>
+
+      </div>
+      <div class="col-lg-4">
+        <div class="text-center"><img class="img centered" src={% static '/site/img/teczka-s.png' %}  alt="profile pic"></div>
+        <div class="text-s24 text-center">
+        <h2>Teczki</h2>
+        </div>
+
+      </div>
+      <div class="col-lg-4">
+        <div class="text-center"><img class="img centered" src={% static '/site/img/clipboard-s.png' %}  alt="profile pic"></div>
+        <div class="text-s24 text-center">
+        <h2>Clipboardy</h2>
+        </div>
+        </div>
+     </div>
+      <div class="row">
+      <div class="col-lg-4">
+        <div class="text-center"><img class="img centered" src={% static '/site/img/teczka-z-raczka-s.png' %} alt="Segregatory"></div>
+        <div class="text-s24 text-center">
+        <h2>Teczki z rączką</h2>
+      </div>
+
+      </div>
+      <div class="col-lg-4">
+        <div class="text-center"><img class="img centered" src={% static '/site/img/pudelko-na-wino-premium-s.png' %}  alt="profile pic"></div>
+        <div class="text-s24 text-center">
+        <h2>Pudełka na wino</h2>
+      </div>
+
+      </div>
+      <div class="col-lg-4">
+        <div class="text-center"><img class="img centered" src={% static '/site/img/torby-s.png' %}  alt="profile pic"></div>
+        <div class="text-s24 text-center">
+        <h2>Torby reklamowe</h2>
+        </div>
+      </div>
+    </div>
+    <div class="text-heavy text-s24 text-center" style="text-transform: none; margin-top: 50px;">Wzbogać z nami Swój wizerunek w oczach odbiorców i klientów</div>
+    </div>
+  </div>
+</div>
+
+{% endblock container %}
+
+{% block scripts %}
+
+{% endblock scripts %}

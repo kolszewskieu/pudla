@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load webpack_static from webpack_loader %}
+
+{% load staticfiles %}
+{#{% load crispy_forms_tags %}#}
+
+{% block title %}{{ block.super }}Home{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="home" %}
+{% endblock %}
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+{#<a class="btn btn-default" href="{% url 'accounts:login' %}" role="button">Log in</a>#}
+{#<a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">Sign up</a>#}
+  {% else %} 
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+{% block splash %}
+  <div class="jumbotron jumbotron-carousel corporate-jumbo">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-8">
+          <h1><img class="img-fluid" src="{% static 'images/s24.svg' %}" /></h1>
+          <p>Segregatory Teczki Clipboardy</p>
+	  <a class="btn btn-danger" href="{% url 'home' %}" role="button"><strong>Zapisz się na newsletter i odbierz pakiet promocyjny</strong></a>
+        </div>
+        <div class="col-md-4 col-sm-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock splash %}
+
+{% block container %}
+<!-- Benefits of the Django application -->
+<a name="about"></a>
+<div id="products" >
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <h2>Dowolna konfiguracja</h2>
+      <p>Nasze produkty wykonujemy w różnych rozmiarach, wersjach, konfiguracjach. Sam określasz, co Ci jest potrzebne w Twoim biurze. Ponieważ, niezawsze jest to oczywiste i proste,Chętnie doradzimy, i pomożemy Ci w dobraniu odpowiednich opcji.</p>
+
+    </div>
+    <div class="col-lg-4">
+      <h2>Dowolny nadruk</h2>
+      <p>Każdy segregator, teczka, czy clipboard może mieć dowolny nadruk według Twojego projektu, nie tylko na zewnątrz, ale również w środku. Wykorzystujemy nowoczesny druk cyfrowy lub offsetowy.</p>
+
+    </div>
+    <div class="col-lg-4">
+      <h2>Efektowne wykończenie</h2>
+      <p>To jest to czym wyróżniamy Twoje produkty, umiejętne dobranie elementów obróbki końcowej, takich jak rodzaj folii, czy lakieru UV, gwarantuje wyjątkowy i niepowtarzalny, trwały charakter ozdabianego przedmiotu.</p>
+
+    </div>
+  </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div >
+                <img src="{% static 'images/panels24.svg' %}" class="img-fluid text-center">
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+{% endblock container %}
+
+{% block scripts %}
+{#<script src="{% static 'site/js/site.js' %}"></script>#}
+{% endblock scripts %}
+

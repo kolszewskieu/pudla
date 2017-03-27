@@ -1,0 +1,114 @@
+{% load render_bundle from webpack_loader %}
+{% load js %}
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% block description %}{% endblock description %}">
+    <meta name="author" content="Krzysztof Olszewski">
+    <link rel="shortcut icon" href="{% static 'site/ico/favicon.ico' %}">
+
+    <title>{% block title %}{% include "_brandname.html" %} :: {% endblock %}</title>
+
+    <!-- Webpack rendered CSS -->
+    {% render_bundle 'main' 'css' %}
+
+    <!-- Custom tags for the head tag -->
+    {% block extrahead %}{% endblock extrahead %}
+  </head>
+
+  <body>
+
+    {% block navbar %}
+      <nav class="navbar navbar-dark bg-inverse">
+<!-- Brand -->
+<a class="navbar-brand" href="#">Logo</a>
+
+<!-- Links -->
+<ul class="nav navbar-nav">
+<li class="nav-item">
+<a class="nav-link" href="#">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Profile</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Contact</a>
+</li>
+</ul>
+</nav>
+
+    {% endblock navbar %}
+
+    {% block messages %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}" role="alert">  <!-- singular -->
+            <a class="close" data-dismiss="alert">×</a>
+            {{ message|safe }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endblock %}
+
+    {% block splash %}
+    {% endblock splash %}
+
+    {% block container %}
+    <div class="container">
+
+      <div class="starter-template">
+        <h1>New Project</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
+
+    </div><!-- /.container -->
+    {% endblock container %}
+
+    <!-- Site footer -->
+    {% block footer %}
+      <!-- Some social button for contact will do -->
+       {% render_bundle 'main' 'js' 'JQUERY' %}
+      <!-- Webpack rendered Javascript -->
+        {% render_bundle 'main' 'js' %}
+
+      <a name="contact"></a>
+      <div class="container">
+            <div class="footer">
+        <div class="row">
+          <div class="row">
+          <div class="col-lg-6">
+              <section>
+              <p><strong>Segregatory24.pl</strong> <br>ul. M. Płażyńskiego 6 <br>83-020 Cedry Wielkie</p>
+            </section>
+              <p>&copy; Segregatory24.pl {% now 'Y' %}</p>
+          </div>
+          <div class="col-lg-6 text-right">
+           <section >
+              <p>Kontakt:<br/>
+                  <i class="fa fa-phone"></i> (58) 683 60 50 <br/>
+                  <i class="fa fa-envelope"></i> kontakt@segregatory24.pl
+              </p>
+            </section>
+
+        </div>
+        </div>
+            </div>
+      </div>
+    {% endblock %}
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    {#<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>#}
+{#    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>#}
+    {% block scripts %}
+    {% endblock scripts %}
+  </body>
+</html>
+
+

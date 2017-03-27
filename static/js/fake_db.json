@@ -1,0 +1,12 @@
+{
+    "boxLength": "",
+    "boxWidth": "",
+    "boxHeight": "",
+    "cardboardOptions": ["2E 265 B-brązowa", "2E 290 B-brązowa", "2E 330  B-brązowa"],
+    "barrierOptions": ["brak", "transparentna", "złota", "srebrna", "czarna"],
+    "fefcoOptions": ["211", "215", "421"],
+    "linerOptions": ["karton GD 180 g/m2", "karton GD 230 g/m2"],
+    "printOptions": ["brak", "CMYK"],
+    "laminatOptions": ["folia błysk", "folia matowa", "folia matowa nierysująca", "lakier dyspersyjny", "lakier UV", "folia matowa + lakier"],
+    "quantity": "50"
+}

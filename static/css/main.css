@@ -1,0 +1,330 @@
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext');
+
+html, body{
+    height:100%;		/* For full height images */
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 40px;
+  border-top: 1px solid #eee;
+}
+
+.alert {
+    margin-top: 55px;
+    margin-bottom: 0;
+}
+
+body>.navbar-transparent {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.navbar-transparent .navbar-nav > .active > a {
+    background-color: transparent;
+}
+
+.navbar-form {
+    margin-right: 0;
+}
+
+.navbar-nav>li>a.profile-menu {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-nav>.btn{
+    margin-top:10px;
+    margin-right: 1.7em;
+}
+
+.navbar-nav > li > a {
+    font-size: 16px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color:#000;
+}
+
+.navbar-brand > img {
+    float: left;
+    margin-right: 10px;
+}
+
+.btn {
+    background-image: none;
+    -webkit-box-shadow: 0px 1px 0px #ddd;
+    -moz-box-shadow: 0px 1px 0px #ddd;
+    box-shadow: 0px 1px 0px #ddd;
+}
+
+/*
+Fade content bs-carousel with hero headers
+Code snippet by maridlcrmn (Follow me on Twitter @maridlcrmn) for Bootsnipp.com
+Image credits: unsplash.com
+*/
+
+/********************************/
+/*       Fade Bs-carousel       */
+/********************************/
+.fade-carousel {
+    position: relative;
+    height: 100vh;
+}
+.fade-carousel .carousel-inner .item {
+    height: 100vh;
+}
+.fade-carousel .carousel-indicators > li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .7;
+}
+.fade-carousel .carousel-indicators > li.active {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 6em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 2s all ease-in-out .1s;
+       -moz-transition: 2s all ease-in-out .1s;
+        -ms-transition: 2s all ease-in-out .1s;
+         -o-transition: 2s all ease-in-out .1s;
+            transition: 2s all ease-in-out .1s;
+}
+
+/********************************/
+/*            Overlay           */
+/********************************/
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #080d15;
+    opacity: .7;
+}
+
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+.btn.btn-lg {padding: 10px 40px;}
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 20px auto;
+}
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1,
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339134316-0e91dc9ded92?q=75&fm=jpg&s=883a422e10fc4149893984019f63c818);
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339684178-3a239570f315?q=75&fm=jpg&s=c39d9a3bf66d6566b9608a9f1f3765af);
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url(https://ununsplash.imgix.net/photo-1416339276121-ba1dfa199912?q=75&fm=jpg&s=9bf9f2ef5be5cb5eee5255e7765cb327);
+}
+
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 980px){
+    .hero { width: 980px; }
+}
+@media screen and (max-width: 640px){
+    .hero h1 { font-size: 4em; }
+}
+
+@media screen and (max-width: 1600px) {
+     .text-head {margin-top: 50px; }
+}
+
+
+
+/* Home page styling */
+.corporate-jumbo {
+    background-image: url("/static/images/s24-01.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #f5f5f5;
+    padding: 10em 0;
+    margin-bottom: 0;
+    height: 100vh;
+}
+
+.corporate-jumbo .well {
+    background-color: rgba(245, 245, 245, .7);
+}
+
+.corporate-jumbo p, .corporate-jumbo h1 {
+    color: #fff;
+}
+
+.corporate-jumbo p, .text-s24 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.corporate-jumbo .well legend {
+    color: #333;
+}
+
+.corporate-jumbo > .container {
+    display: block;
+    position: absolute;
+    bottom: 2em;
+    left: 15px;
+}
+
+.contact-banner {
+    padding: 100px 0;
+    background: #e0e0e0;
+    margin-top: 100px;
+}
+
+.footer a:hover {
+    text-decoration: none;
+}
+
+/* About page styling */
+#sec1 {
+    background-color: #f3df54;
+    padding: 50px;
+}
+
+#sec2 {
+    background-color: #5ccafd;
+}
+#products {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+/* Profile page styling */
+.profile-head {
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJklEQVQIW2NkAIILFy78NzAwYATRjCABZEGwAEwFiA1WBlIOUwkA72gTdDIYVO4AAAAASUVORK5CYII=) repeat;
+    padding: 70px 0px 30px 20px;
+}
+.profile-body {
+    padding: 4px 0px;
+}
+
+.text-page {
+    padding: 70px 0;
+}
+
+.text-head {
+    margin-bottom: 40px;
+}
+.text-heavy {
+    font-size: 36px;
+}
+
+#map-outer {
+    height: 440px;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    background-color:#FFF
+}
+
+#map-container {
+    height: 400px
+}
+
+.img-dim {
+    opacity: 0.5;
+    box-shadow: inset 0px 0px 64px 64px #EA1717, 0px 0px 4px 4px #EA1717;
+}
+
+/* Authentication forms */
+.form-box form,
+.form-box .form-message {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-box form .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-box form .checkbox {
+  font-weight: normal;
+}
+
+.form-box form .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-box form .form-control:focus {
+  z-index: 2;
+}

@@ -1,0 +1,23 @@
+// Main Style
+
+// Vendor
+// @import "vendor/spritesmith";
+
+// General
+@import "variables";
+@import "helpers/all";
+@import "global";
+@import "components/all";
+@import "pages/all";
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin-ext');
+
+html, body{
+    height:100%;		/* For full height images */
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+

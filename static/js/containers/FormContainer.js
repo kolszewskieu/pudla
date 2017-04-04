@@ -6,6 +6,7 @@ import CheckboxOrRadioGroup from '../components/CheckboxOrRadioGroup';
 import SingleInput from '../components/SingleInput';
 import TextArea from '../components/TextArea';
 import Select from '../components/Select';
+import Websocket from 'react-websocket';
 import data from '../fake_db.json';
 
 class FormContainer extends Component {
@@ -45,6 +46,7 @@ class FormContainer extends Component {
 
 
 	}
+
 	componentDidMount() {
 				this.setState({
           boxLength: data.boxLength,
@@ -65,6 +67,21 @@ class FormContainer extends Component {
           quantity: '50'
 				});
 			};
+
+  handleData(data) {
+    //receives messages from the connected websocket
+    let result = JSON.parse(data);
+    if (result.job_status == 'completed')
+    this.setState({calculation: result.job_result})
+    console.log("Received message data  ", result);
+  }
+
+  sendSocketMessage(message){
+    // sends message to channels back-end
+    const socket = this.refs.socket;
+    socket.state.ws.send(JSON.stringify(message));
+    console.log('Send this in a POST request:', message);
+  }
 
 	handleBoxLengthChange(e) {
 		this.setState({ boxLength: e.target.value }, () => console.log('boxLength: ', this.state.boxLength));
@@ -154,14 +171,21 @@ class FormContainer extends Component {
       laminatSelection: this.state.laminatSelection
     };
 
-		console.log('Send this in a POST request:', formPayload);
+    let msg = { action: "start_sec3",
+                formPayLoad: formPayload
+    };
+
+    this.sendSocketMessage(msg);
+		//console.log('Send this in a POST request:', formPayload);
 		//this.handleClearForm(e);
 	}
+
 	render() {
 		return (
 			<form className="container" onSubmit={this.handleFormSubmit}>
 				<h3>FEFCO Calculator</h3>
-				<Select
+        <Websocket ref="socket" url={this.props.socket} onMessage={this.handleData.bind(this)}/>
+        <Select
 					name={'fefcoType'}
 					placeholder={'Wybierz rodzaj pudełka'}
 					controlFunc={this.handleFefcoSelect}
@@ -226,6 +250,7 @@ class FormContainer extends Component {
 					content={this.state.quantity}
 					placeholder={'Enter number of boxes'} />
 
+          Koszt: {this.state.calculation}<br/>
 				<input
 					type="submit"
 					className="btn btn-primary float-right"
@@ -234,6 +259,7 @@ class FormContainer extends Component {
 					className="btn btn-link float-left"
 					onClick={this.handleClearForm}>Wyczyść kalkulator</button>
 			</form>
+
 		);
 	}
 }
